@@ -152,13 +152,72 @@ pytest -v src/tests/test_become_client_number_purchase.py::TestBecomeClientNumbe
 
 ## Что сдать
 
-Участник должен отправить ссылку на свой fork и merge request / pull request.
+Участник должен отправить ссылку на свой репозиторий с выполненным заданием или ссылку на merge request / pull request.
 
-Fork - это личная копия этого репозитория в аккаунте участника. Работать нужно в своей копии, не в исходном репозитории с заданием.
+Работать нужно в своей копии проекта, не в исходном репозитории с заданием.
 
-### Как сдать через fork
+В README или описании MR нужно коротко указать:
 
-1. Откройте репозиторий с заданием в GitLab или GitHub.
+- какой сценарий покрыт;
+- какие Page Objects созданы;
+- какие предположения были сделаны;
+- выполнялось ли extra-задание;
+- что не удалось реализовать и почему.
+
+## Как загрузить решение в свой репозиторий
+
+### Вариант 1: свой репозиторий в GitLab
+
+Если вы используете GitLab, можно перенести проект из GitHub в свой GitLab-репозиторий.
+
+1. Склонируйте исходный репозиторий:
+
+```bash
+git clone https://github.com/NatalyaGoncharova/MOBILE.git
+cd MOBILE
+```
+
+2. Создайте пустой репозиторий в GitLab.
+3. Замените `origin` на ссылку вашего GitLab-репозитория:
+
+```bash
+git remote remove origin
+git remote add origin <ссылка-на-ваш-gitlab-репозиторий>
+```
+
+4. Отправьте исходную версию проекта в свой GitLab:
+
+```bash
+git push -u origin main
+```
+
+5. Создайте отдельную ветку для решения:
+
+```bash
+git checkout -b solution/number-purchase
+```
+
+6. Выполните задание.
+7. Закоммитьте изменения:
+
+```bash
+git add .
+git commit -m "Implement number purchase test"
+```
+
+8. Отправьте ветку в свой GitLab:
+
+```bash
+git push origin solution/number-purchase
+```
+
+9. Пришлите ссылку на GitLab-репозиторий или merge request.
+
+### Вариант 2: GitHub fork
+
+Fork - это личная копия этого репозитория в аккаунте участника.
+
+1. Откройте репозиторий с заданием в GitHub.
 2. Нажмите `Fork`.
 3. Склонируйте свой fork:
 
@@ -189,11 +248,3 @@ git push origin solution/number-purchase
 
 8. Создайте merge request / pull request из ветки `solution/number-purchase`.
 9. Пришлите ссылку на merge request / pull request.
-
-В MR/README нужно коротко описать:
-
-- какой сценарий покрыт;
-- какие Page Objects созданы;
-- какие предположения были сделаны;
-- выполнялось ли extra-задание;
-- что не удалось реализовать и почему.
